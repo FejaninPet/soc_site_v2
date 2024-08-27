@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Страница пользователя{% endblock %}
+{% block content %}
+    <h1>Страница пользователя</h1>
+    <p>Добро пожаловать.</p>
+    <p><a href="{% url 'edit' %}">Здесь</a> можно внести изменения в свой профиль,<br>
+    а <a href="{% url 'password_change' %}">здесь</a> изменить пароль. &#128521;</p>
+{% endblock %}
