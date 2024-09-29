@@ -3,7 +3,19 @@
 {% block title %}Страница пользователя{% endblock %}
 {% block content %}
     <h1>Страница пользователя</h1>
-    <p>Добро пожаловать.</p>
+    {% with total_images_created=request.user.images_created.count %}
+        <p>
+            Добро пожаловать.<br>
+            У вас есть {{ total_images_created }} изображений для закладок.
+        </p>
+    {% endwith %}
+    <p>
+        Перетащите следующую кнопку в закладки панели инструментов вашего браузера, <br>
+        чтобы иметь возможность создавать закладки на изображения других сайтов. <br> →
+        <a href="javascript:{% include 'bookmarklet_launcher.js' %}" class="button">
+            Кнопка лаунчера
+        </a>
+    </p>
     <p><a href="{% url 'edit' %}">Здесь</a> можно внести изменения в свой профиль,<br>
     а <a href="{% url 'password_change' %}">здесь</a> изменить пароль. &#128521;</p>
 {% endblock %}
