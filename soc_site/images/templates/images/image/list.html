@@ -18,7 +18,7 @@
 
   window.addEventListener('scroll', function(e) {
     var margin = document.body.clientHeight - window.innerHeight - 200;
-    if (window.pageYOffset > margin && !emptyPage && !blockRequest) {
+    if(window.pageYOffset > margin && !emptyPage && !blockRequest) {
       blockRequest = true;
       page += 1;
 
@@ -37,7 +37,7 @@
     }
   });
 
-  // запустить события прокрутки
+  // Запустить событие прокрутки
   const scrollEvent = new Event('scroll');
   window.dispatchEvent(scrollEvent);
 {% endblock %}
